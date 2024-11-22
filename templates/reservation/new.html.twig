@@ -1,0 +1,37 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% extends 'back.html.twig' %}
+
+{% block title %}Ajouter une Reservation{% endblock %}
+
+{% block body %}
+     
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<div class="container-fluid pt-4 px-4">
+  <h4 class="m-0 font-weight-bold ">Ajouter une réservation </h4>
+  <div class="row g-4">
+                    <div class="col-md-12 ">
+                        <div class="bg-light rounded h-100 p-4">
+                        <div class="row">
+                         
+                                <div class="mb-3">
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ include('reservation/_form.html.twig') }}
+    </div>
+    </div>
+    
+
+    
+
+    <a href="{{ path('app_reservation_index') }}"  class="btn btn-primary m-2"> <i class="fa fa-arrow-left" aria-hidden="true"></i> Retour</a>
+    </div>
+     </div>
+      </div>
+    
+       </div>
+       
+
+
+       
+
+{% endblock %}

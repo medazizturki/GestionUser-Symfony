@@ -1,0 +1,37 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Facture{% endblock %}
+
+{% block body %}
+<div id="affichage" class="container-fluid pt-4 px-4">
+    <h1>Facture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>id</th>
+                <td>{{ facture.id }}</td>
+            </tr>
+            <tr>
+                <th>NbScience</th>
+                <td>{{ facture.nbScience }}</td>
+            </tr>
+            <tr>
+                <th>TypeDePaiement</th>
+                <td>{{ facture.typeDePaiement }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+    <button class="btn btn-primary px-3 py-1" onclick="PrintElem('affichage');">PRINT</button>
+    
+
+    <a href="{{ path('app_facture_front') }}"class="btn btn-success rounded-pill m-2">back to list</a>
+    </br>
+
+    <a href="{{ path('app_facture_editFront', {'id': facture.id}) }}"class="btn btn-success rounded-pill m-2">edit</a>
+
+
+    {{ include('facture/_delete_formFront.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+app_offre_indexf:
+    path:   /offre/f/{page}/{nbre}
+    controller: App\Controller\OffreController::indexf
+    defaults:
+        page: 1
+        nbre: 8
+    requirements:
+        page: '\d+'

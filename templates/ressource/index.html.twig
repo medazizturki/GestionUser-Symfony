@@ -1,0 +1,60 @@
+{% extends 'back.html.twig' %}
+
+
+
+{% block title %}Ressource{% endblock %}
+
+{% block body %}
+  <h1 class="m-0 font-weight-bold "> Ressource </h1>
+  </br>
+    <a href="{{ path('app_ressource_new') }} " class="btn btn-success rounded-pill m-2">Ajouter une Ressources</a>
+
+<div class="row g-4">
+                    <div class="col-sm-12 ">
+                        <div class="bg-light rounded h-100 p-4">
+                        <div class="col-md-3">
+                       <form method="post" action="{{ path('app_ressource_search') }}">
+                    <input type="text" name="ressource" class= "form-control" placeholder="Ressource " />
+                    
+                    <input type="submit"   class="btn btn-secondary rounded-pill m-2" value="chercher">
+                </form>  
+                
+    <form >
+   
+    </form>
+    </table>     
+                </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom de Ressource</th>
+                <th>Type de Ressource</th>
+                <th>Disponibilite de Ressource</th>
+                
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ressource in ressources %}
+            <tr>
+                
+                <td>{{ ressource.nomRessource }}</td>
+                <td>{{ ressource.typeRessource }}</td>
+                <td>{{ ressource.disponibiliteRessource }}</td>
+                
+                <td>
+                
+                    <a href="{{ path('app_ressource_show', {'id': ressource.id}) }}" class="btn btn-square btn-outline-success m-2"><i class="fa fa-eye"></i></a>
+                    <a href="{{ path('app_ressource_edit', {'id': ressource.id}) }}" class="btn btn-square btn-outline-primary m-2" ><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de ressource trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        
+
+    
+{% endblock %}

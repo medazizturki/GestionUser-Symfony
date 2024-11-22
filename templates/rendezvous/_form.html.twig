@@ -1,0 +1,22 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{{ form_start(form) }}
+
+    <div class="row">
+     <div class="col" style="text-color: #FFFFFF;">{{ form_row(form.nomRendezvous) }}</div>
+     <div class="col">{{ form_row(form.prenomRendezvous) }}</div>
+
+       </div>
+         <div class="row">
+     <div class="col">{{ form_row(form.lieuRendezvous) }}</div>
+     <div class="col">{{ form_row(form.emailRendezvous) }}</div>
+     </div>
+              <div class="row">
+     <div class="col">{{ form_row(form.dateRendezvous) }}</div>
+
+     </div>
+     {{form_rest(form)}} 
+  
+    <button class="btn btn-success m-2">{{ button_label|default('Save') }}</button>
+    </br>
+    </br>
+{{ form_end(form) }}

@@ -1,0 +1,41 @@
+<img src="{{ asset('uploads/logo.jpg') }}"  style=" width:100px; height:100px;"alt="Description de votre image">
+{% block title %} <style=" width:10px; height:100px;"><h1>LISTES DES EVENEMENTS</h1>{% endblock %}
+
+{% block body %}
+<div>
+<table  border="1">
+        <thead >
+            <tr>
+            
+            
+                <th>Id</th>
+                <th>Image</th>
+                <th>Type</th>
+                <th>Nom</th>
+                <th>Lieu</th>
+                <th>DateDebut</th>
+                <th>DateFin</th>
+                <th>Color</th>
+                
+                          
+            </tr>  
+        </thead>
+            <tbody>
+                        
+            
+                 {% for evenement in evenements %}
+            <tr>
+                <td>{{ evenement.id }}</td>
+                <td><img src="{{ asset('uploads/' ~evenement.imageEvenement) }}" style=" width:100px; height:100px;" alt=""/></td>
+                <td>{{ evenement.typeEvenement }}</td>
+                <td>{{ evenement.nomEvenement }}</td>
+                <td>{{ evenement.lieuEvenement }}</td>
+                <td>{{ evenement.dateDebut ? evenement.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.dateFin ? evenement.dateFin|date('Y-m-d') : '' }}</td>
+                <td>{{ evenement.Color }}</td>
+                </tr>
+                        {% endfor %}
+             </tbody>
+</table>
+</div>
+{% endblock %}

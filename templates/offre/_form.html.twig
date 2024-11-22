@@ -1,0 +1,36 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+<section class="ftco-section contact-section ftco-degree-bg">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          
+          <div class="w-200"></div>
+         
+          
+          <div class="col-md-5">
+          <div class="row block-100">
+          <div class="col-md-20 pr-md-5">
+            <form action="#">
+{{ form_start(form) }}
+ {{ form_start(form) }}
+          
+<div class="row">
+    
+     <div class="col">{{ form_row(form.nomOffre) }}</div>
+     </div>
+      
+             
+     
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+</form>
+          
+          </div>
+
+          <div class="col-md-7" id="map"></div>
+        </div>
+          </div>
+        </div>
+       
+         
+    </section>

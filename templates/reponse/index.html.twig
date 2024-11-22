@@ -1,0 +1,41 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Reponse index{% endblock %}
+
+{% block body %}
+    <h1>Reponse index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id </th>
+                <th>Reponse</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reponse in reponses %}
+            <tr>
+                <td>{{ reponse.id  }}</td>
+                <td>{{ reponse.reponse }}</td>
+                <td>
+                    <a href="{{ path('app_reponse_show', {'id': reponse.id }) }}"><button type="button" class="btn btn-primary btn-sm">Afficher</button>
+</a>
+                    <a href="{{ path('app_reponse_edit', {'id': reponse.id }) }}"><button type="button" class="btn btn-primary btn-sm">Modifier</button>
+</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_reponse_new') }}"><button type="button" class="btn btn-primary btn-sm">Ajouter reponse</button>
+</a>
+
+{{ knp_pagination_render(reponses) }}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{#{% extends 'front.html.twig' %}
+{% block title %}Demande index{% endblock %}
+
+{% block body %}
+    <h1>Demande index</h1>
+
+    
+        <br>
+        <tr>
+        {% for demande in demandes %}
+            <ul>
+                <h2>{{ demande.idDemande }}</h2>
+                <h2>{{ demande.nomDemande }}</h2>
+                <h2>{{ demande.prenomDemande }}</h2>
+                <h2>{{ demande.cvDemande }}</h2>
+                <h2>{{ demande.descriptionDemande }}</td>
+                {#<td>
+                    <a href="{{ path('app_demande_show', {'idDemande': demande.idDemande}) }}">show</a>
+                    <a href="{{ path('app_demande_edit', {'idDemande': demande.idDemande}) }}">edit</a>
+                </td>#}
+            </ul>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_demande_newfront') }}">Create new</a>
+{% endblock %}

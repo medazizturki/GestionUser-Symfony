@@ -1,0 +1,15 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{{ form_start(form) }}
+
+    <div class="row">
+     <div class="col">{{ form_row(form.nbScience ) }}</div>
+
+       </div>
+         <div class="row">
+     <div class="col">{{ form_row(form.typeDePaiement) }}</div>
+     <div class="col">{{ form_row(form.Rendezvous) }}</div>
+     </div>
+
+     {{form_rest(form)}}
+    <button class="btn btn-success m-2">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

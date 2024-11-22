@@ -1,0 +1,26 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Modifier Ressources{% endblock %}
+
+{% block body %}
+    <div class="container-fluid pt-4 px-4">
+  <h4 class="m-0 font-weight-bold ">Modifier une Ressource </h4>
+
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 ">
+                        <div class="bg-light rounded h-100 p-4">
+
+    {{ include('ressource/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('app_ressource_index') }}" class="btn btn-warning rounded-pill m-2"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+Retour</a>
+
+    {{ include('ressource/_delete_form.html.twig') }}
+    </div>
+    </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ form_widget(form) }}
+     <button class="btn btn-primary px-3 py-1">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

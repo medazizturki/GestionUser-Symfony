@@ -1,0 +1,51 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Rendezvous index{% endblock %}
+
+{% block body %}
+    <h1>Rendezvous</h1>
+        <div class="row g-4">
+    <div class="col-md-12 ">
+       <div class="bg-light rounded h-100 ">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Lieu</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rendezvou in rendezvouses %}
+            <tr>
+                <td>{{ rendezvou.id }}</td>
+                <td>{{ rendezvou.nomRendezvous }}</td>
+                <td>{{ rendezvou.prenomRendezvous }}</td>
+                <td>{{ rendezvou.lieuRendezvous }}</td>
+                <td>{{ rendezvou.emailRendezvous }}</td>
+                <td>{{ rendezvou.dateRendezvous ? rendezvou.dateRendezvous|date('Y-m-d') : '' }}</td>
+                
+                <td>
+                    <a href="{{ path('app_rendezvous_show', {'id': rendezvou.id}) }}"class="btn btn-success m-2">show</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+    </div>
+
+    <a href="{{ path('app_rendezvous_newfront') }}"class="btn btn-success m-2">ajouter rendez-vous</a>
+    
+{% endblock %}

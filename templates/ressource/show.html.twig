@@ -1,0 +1,42 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Ressource{% endblock %}
+
+{% block body %}
+   <div class="container-fluid pt-4 px-4">
+  <h4 class="m-0 font-weight-bold ">Ressource </h4>
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 ">
+                    
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>id Ressource</th>
+                <td>{{ ressource.id }}</td>
+            </tr>
+            <tr>
+                <th>TypeRessource</th>
+                <td>{{ ressource.typeRessource }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteRessource</th>
+                <td>{{ ressource.disponibiliteRessource }}</td>
+            </tr>
+            <tr>
+                <th>NomRessource</th>
+                <td>{{ ressource.nomRessource }}</td>
+            </tr>
+        </tbody>
+    </table>
+  
+    <a href="{{ path('app_ressource_index') }}" class="btn btn-success rounded-pill m-2"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+Retour</a>
+
+    <a href="{{ path('app_ressource_edit', {'id': ressource.id}) }}" class="btn btn-primary rounded-pill m-2">Modifier</a>
+
+    {{ include('ressource/_delete_form.html.twig') }}
+    </div>
+    </div>
+    </div>
+{% endblock %}

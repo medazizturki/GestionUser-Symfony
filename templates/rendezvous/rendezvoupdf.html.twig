@@ -1,0 +1,72 @@
+{% block body %}
+<style>
+    body{
+        font:normal 12px/20PX "Liberation sans", Arial, Helvetica, sans-serif;
+        color:#585858;
+    }
+    img{
+        height: 100px;
+        width: 100px;
+        alignment: center;
+    }
+</style>
+<img src='data:image;base64,<?= {{ logobase64}};?>' />
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row ">
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Event list</h5>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-9"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+
+
+
+                    <table class="table">
+        <thead>
+            <tr>
+                <th style="text-color: #FFFFFF;">Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Lieu</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rendezvou in rendezvouses %}
+            <tr>
+                <td>{{ rendezvou.id }}</td>
+                <td>{{ rendezvou.nomRendezvous }}</td>
+                <td>{{ rendezvou.prenomRendezvous }}</td>
+                <td>{{ rendezvou.lieuRendezvous }}</td>
+                <td>{{ rendezvou.emailRendezvous }}</td>
+                <td>{{ rendezvou.dateRendezvous ? rendezvou.dateRendezvous|date('Y-m-d') : '' }}</td>
+
+            </tr>
+
+        {% else %}
+            <td colspan="7">no records found</td>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}

@@ -1,0 +1,23 @@
+
+<img src="{{ asset('uploads/logo.jpg') }}"  style=" width:100px; height:100px;"alt="Description de votre image">
+{% block title %} <style=" width:10px; height:100px;"><h1>LA LISTE DES OFFRES</h1>{% endblock %}
+      <div class="slider-item" style="background-image: url('{{asset('logo.png')}}');"></div>
+<table  border="1">
+        <thead >
+            <tr>
+                <th>Id Offre</th>
+                <th>Nom</th>
+                <th>Date</th>
+                 
+         </tr>  
+        </thead>
+            <tbody>
+                        {% for off in offre %}
+            <tr>
+                <td>{{ off.id }}</td>
+                <td>{{ off.nomOffre }}</td>
+                <td>{{ off.datepubOffre ? off.datepubOffre|date('Y-m-d') : '' }}</td>        
+             </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>

@@ -1,0 +1,49 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Reclamation index{% endblock %}
+
+{% block body %}
+    <h1>Reclamation index</h1>
+
+ <div id="affichage" class="container-fluid pt-4 px-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>NomReclamation</th>
+                <th>PrenomReclamation</th>
+                <th>DestinationReclamation</th>
+                <th>DescriptionReclamation</th>
+                <th>TypeReclamation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reclamation in reclamations %}
+            <tr>
+                <td>{{ reclamation.id }}</td>
+                <td>{{ reclamation.nomReclamation }}</td>
+                <td>{{ reclamation.prenomReclamation }}</td>
+                <td>{{ reclamation.destinationReclamation }}</td>
+                <td>{{ reclamation.descriptionReclamation }}</td>
+                <td>{{ reclamation.typeReclamation }}</td>
+</div>
+
+                <td>
+                    <a href="{{ path('app_reponse_new', {'id': reclamation.id}) }}"><button type="button" class="btn btn-primary btn-sm">Repondre</button>
+</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            <button style="print"   class="btn btn-primary px-3 py-1" onclick="PrintElem('affichage');">PRINT</button>
+            <br>
+            <br>
+        <p><a href="{{ path('generator_service4') }}" class="btn btn-primary px-3 py-1">PDF</a></p>
+
+{% endblock %}

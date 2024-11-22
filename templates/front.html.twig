@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ADO-DOC</title>
+    <link href="{{asset('assettB/img/rr.png')}}" rel="icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="{{asset('assetsF/https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700')}}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('assetF/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetF/css/animate.css')}}">
+    
+    <link rel="stylesheet" href="{{asset('assetF/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetF/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assetF/css/magnific-popup.css')}}">
+
+    <link rel="stylesheet" href="{{asset('assetF/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('assetF/css/ionicons.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('assetF/css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('assetF/css/jquery.timepicker.css')}}">
+
+    
+    <link rel="stylesheet" href="{{asset('assetF/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('assetF/css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('assetF/css/style.css')}}">
+  </head>
+  <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light ftco_navbar ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"><span>ADO_DOC</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
+
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="front.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="{{ path('app_evenement_indexFront') }}" class="nav-link">Evenement</a></li>
+              <li class="nav-item"><a href="/offre/f/1/6" class="nav-link">Offre</a></li>
+              
+              <li class="nav-item"><a href="/rendezvous/newfront" class="nav-link">Rendezvous</a></li>
+              <li class="nav-item"><a href="/ressource/front" class="nav-link">Transport</a></li>
+              <li class="nav-item"><a href="/reclamation/" class="nav-link">Reclamation</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+              <li>
+                                <div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+              </li>
+              <li>
+                           <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            {#<img class="rounded-circle me-lg-2" src="{{asset('assetsB/img/user.jpg')}}" alt="" style="width: 40px; height: 40px;">#}
+                            {%if app.user !=null%}
+                            <span class="d-none d-lg-inline-flex">{{app.user.email}}</span>
+                        {% endif %}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="{{ path('app_login')}}" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </nav>
+    <!-- END nav -->
+<script>
+        function PrintElem(elem)
+{
+    
+    var mywindow = window.open('', 'PRINT', 'height=500,width=700');
+    mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write('<h1>' + document.title  + '</h1>');
+    mywindow.document.write(document.getElementById('affichage').innerHTML);
+    mywindow.document.write('</body></html>');
+
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10*/
+
+    mywindow.print();
+    mywindow.close();
+
+    return true;
+}
+    </script>
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{{asset('assetF/images/bg_1.jpg')}}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Modern Consultation in a Calm and Relaxed Environment</h1>
+              <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="{{ path('app_rendezvous_newfront') }}"class="btn btn-primary px-4 py-3">prendre un rendez-vous</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('{{asset('assetF/images/bg_2.jpg')}}');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Modern Achieve Your Desired Perfect Smile</h1>
+              <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="{{ path('app_rendezvous_newfront') }}"class="btn btn-primary px-4 py-3">prendre un rendez-vous</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+          {% block body %} {% endblock %} 
+
+ <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="form-group">
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <input type="text" class="form-control appointment_date" placeholder="Date">
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <input type="text" class="form-control appointment_time" placeholder="Time">
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="form-group">
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+              
+
+  {# -------------------------- Share -------------------------------------  #}
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=64065d7b567fbf001a2d5d17&product=inline-share-buttons&source=platform" async="async"></script>
+  {# ---------------------------------------------------------------------- #}
+
+
+  <script src="{{asset('assetF/js/jquery.min.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery-migrate-3.0.1.min.js')}}"></script>
+  <script src="{{asset('assetF/js/popper.min.js')}}"></script>
+  <script src="{{asset('assetF/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery.easing.1.3.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery.waypoints.min.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery.stellar.min.js')}}"></script>
+  <script src="{{asset('assetF/js/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{asset('assetF/js/aos.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery.animateNumber.min.js')}}"></script>
+  <script src="{{asset('assetF/js/bootstrap-datepicker.js')}}"></script>
+  <script src="{{asset('assetF/js/jquery.timepicker.min.js')}}"></script>
+  <script src="{{asset('assetF/js/scrollax.min.js')}}"></script>
+  <script src="{{asset('assetF/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false')}}"></script>
+  <script src="{{asset('assetF/js/google-map.js')}}"></script>
+  <script src="{{asset('assetF/js/main.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

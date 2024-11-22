@@ -1,0 +1,36 @@
+<img src="{{ asset('uploads/logo.jpg') }}"  style=" width:100px; height:100px;"alt="Description de votre image">
+{% block title %} <style=" width:10px; height:100px;"><h1>LISTES DES Reclamations</h1>{% endblock %}
+
+{% block body %}
+<div>
+<table  border="1">
+        <thead >
+            <tr>
+            
+            
+                <th>id </th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Destination</th>
+                <th>Description</th>
+                <th>Type</th>
+                
+                          
+            </tr>  
+        </thead>
+            <tbody>
+                        
+                 {% for reclamation in reclamations %}   
+            <tr>
+                <td>{{ reclamation.id }}</td>
+                <td>{{ reclamation.nomReclamation }}</td>
+                <td>{{ reclamation.prenomReclamation }}</td>
+                <td>{{ reclamation.destinationReclamation }}</td>
+                <td>{{ reclamation.descriptionReclamation }}</td>
+                <td>{{ reclamation.typeReclamation }}</td>
+                </tr>
+                        {% endfor %}
+             </tbody>
+</table>
+</div>
+{% endblock %}

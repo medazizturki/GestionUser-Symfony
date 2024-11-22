@@ -1,0 +1,32 @@
+<img src="{{ asset('uploads/logo.jpg') }}"  style=" width:100px; height:100px;"alt="Description de votre image">
+{% block title %} <style=" width:10px; height:100px;"><h1>LA LISTE DES USERS</h1>{% endblock %}
+                <table  border="1">
+                    <thead >
+                        <tr>
+                            <th>Id</th>
+                <th>Email</th>
+                <th>>telephone</th>
+                <th>name</th>
+                <th>password</th>
+             
+                
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in user %}
+                            <tr>
+                                <td>{{ user.getId() }}</td>
+                                
+                               
+                                <td>{{ user.getEmail() }}</td>
+                                <td>{{ user.getName() }}</td>
+                                <td>{{ user.getTelephone() }}</td>
+                                <td>{{ user.getPassword() }}</td>
+                           
+                                  
+                               
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>

@@ -1,0 +1,12 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}New Facture{% endblock %}
+
+{% block body %}
+    <h1>Facture</h1>
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+    {{ include('facture/_form.html.twig') }}
+
+    <a href="{{ path('app_facture_front') }}" class="btn btn-success rounded-pill m-2">back to list</a>
+{% endblock %}

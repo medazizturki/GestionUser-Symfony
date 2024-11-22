@@ -1,0 +1,73 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Ressource{% endblock %}
+
+{% block body %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<script> 
+      $(document).ready(function () {
+    $("#tb thead, #tb tfoot").remove(); //Remove element
+    $("#tb").find('td').removeAttr("align"); // Remove attribute
+    
+    $('#tb').replaceWith($('#tb').html()
+        .replace(/<tbody/gi, "<div id='tb' class='row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3' ")
+        .replace(/<tr/gi, "<div class='col'> <div class='card'> <div class='card-body text-center' ")
+        .replace(/<\/tr>/gi, "</div></div></div>")
+        .replace(/<td/gi, "<div")
+        .replace(/<\/td>/gi, "</div>")
+        .replace(/<\/tbody/gi, "<\/div")
+    );
+
+    // each loop for card layout
+    $("#tb .card").each(function() {
+        $(this).find('.card-body div:first-child').addClass('h6 fw-bold text-primary'); // Change product style
+        var imgPath = $(this).find('.card-body div:last-child');
+        $(this).find('.card-body').before(`
+            <div class="ratio ratio-4x3">
+                <img src="`+ imgPath.text()+`" class="card-img-top1 p-2 w-auto mx-auto start-0 end-0" alt="...">
+            </div>
+        `);
+        imgPath.remove() // After pick text then remove 
+    });
+});
+       </script>
+
+
+
+
+<div class="row g-4">
+                    <div class="col-sm-12 ">
+                        <div class="bg-light rounded h-100 p-4">
+                            
+    
+    <div class="container py-3">
+    <table id="tb" class="table table-bordered table-hover table-condensed">
+        
+        <tbody>
+        {% for ressource in ressources %}
+            <tr>
+                
+                <td>{{ ressource.nomRessource }}</td>
+                <td>{{ ressource.typeRessource }}</td>
+                <td>{{ ressource.disponibiliteRessource }}</td>
+                <td>https://imgs.search.brave.com/6MRiybYIHTOQxD4gcMo1lRydTxWEkZ3Ru5y3EitRJ2Y/rs:fit:240:169:1/g:ce/aHR0cDovL3BuZ2lt/Zy5jb20vdXBsb2Fk/cy9hbWJ1bGFuY2Uv/YW1idWxhbmNlX1BO/RzE0LnBuZw</td>
+                
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+    
+{% endblock %}

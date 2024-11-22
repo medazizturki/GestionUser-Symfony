@@ -1,0 +1,116 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Gestion reservation{% endblock %}
+
+            {% block body %}
+   
+   <div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                </ol>
+            </nav>
+        </div>
+    <div class="row ">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <div style="display: flex">
+                        <div class="col-md-5">
+                        </div>
+                        <form method="post" class="forms-sample" style="margin-left: -42px" >
+                            <div class="form-group col-md-4" style="display: flex; width: 100%!important; margin: 0px!important;">
+
+                                
+                                <div class="form-check">
+                                    <label class="form-check-label" style="width: 86px;margin-left: -2px;margin-right: 10px;">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="dateDebut" >Date de Debut</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label" style="width: 86px;margin-left: -2px;margin-right: 10px;">
+                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="descriptionReservation" >Description</label>
+                                </div>
+
+                                <button type="Submit" class="btn btn-success btn-fw" style="margin: auto; ">Sort</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <ul class="navbar-nav w-100" style="margin-top: 18px;">
+                        <li class="nav-item w-100">
+                            <form name="Search-method" id="Search-method"method="post" class="forms-sample" style="display: flex">
+                                <div class="form-group col-md-5">
+                                    <label style="margin-top: 11px;margin-left: 10px;margin-right: 14px;padding-bottom: 7px;;">Option Recherche</label>
+                                    <select name="optionsearch" class="js-example-basic-single" style="width: 200px;height: 38px; color: white; background-color: #191c24; border-radius: 4px;text-align: center;border: 2px solid #0090e7;margin-right: 15px;">
+                                        <option value="">Choisi un Critére</option>
+                                        <option value="id">id Reservation</option>
+                                        <option value="dateDebut">dateDebut</option>
+                                        <option value="descriptionReservation">descriptionReservation</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <div class="input-group">
+                                        <input name="Search" type="text" class="form-control" placeholder="Search Events" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary" type="Submit">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+ 
+<div class="container-fluid pt-4 px-4">
+     <h4 class="m-0 font-weight-bold ">Gestion reservation </h4>
+     <br>
+<a href="{{ path('app_reservation_new') }}"  class="btn btn-success m-2">Ajouter Reservation</a>
+<div class="row g-4">
+    <div class="col-md-12 ">
+       <div class="bg-light rounded h-100 p-4">
+              <div id="affichage" class="container-fluid pt-4 px-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                 <td>{{ reservation.descriptionReservation }}</td>
+                <td>{{ reservation.dateDebut ? reservation.dateDebut|date('Y-m-d') : '' }}</td>
+                <td>{{ reservation.dateFin ? reservation.dateFin|date('Y-m-d') : '' }}</td>
+</div>
+                <td>
+                    <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}" class="btn btn-square btn-success m-2" ><i class="fa fa-eye"></i></a>
+                    <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}" class="btn btn-square btn-primary m-2"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        {#<a href="{{ path('app_reservation_trier')}}"><button type="button" class="btn btn-primary btn-sm"> Trier</button></a>#}
+        </tbody>
+        
+    </table>
+    <button style="print"   class="btn btn-primary px-3 py-1" onclick="PrintElem('affichage');">Print</button>
+
+    
+    
+    
+
+</div> 
+</div> 
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Facture index{% endblock %}
+
+{% block body %}
+    <h1>Facture </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>NbScience</th>
+                <th>Type De Paiement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for facture in factures %}
+            <tr>
+                <td>{{ facture.id }}</td>
+
+                <td>{{ facture.nbScience }}</td>
+                <td>{{ facture.typeDePaiement }}</td>
+                <td>
+                    <a href="{{ path('app_facture_showFront', {'id': facture.id}) }}"class="btn btn-success m-2">show</a>
+                    <a href="{{ path('app_facture_editFront', {'id': facture.id}) }}"class="btn btn-primary">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_facture_newFrontid') }}" class="btn btn-success rounded-pill m-2">ajouter facture</a>
+{% endblock %}

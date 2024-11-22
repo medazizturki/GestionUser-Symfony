@@ -1,0 +1,19 @@
+
+<form method="post" class="container">
+
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+    <div>
+        {{ form_widget(form) }}
+    </div>
+    <div class = "row">
+    <div class="g-recaptcha" data-sitekey="6LfHIN8kAAAAAPrU_yiHksEZp5fcz9FvV0CGjIlO"></div>
+    </div>
+    <button type="submit" class="btn btn-success m-2" name="submit">{{ button_label|default('Enregistrer') }}</button>
+    {{ form_end(form) }}
+</form>

@@ -1,0 +1,22 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Ressource{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="container-fluid pt-4 px-4">
+  <h4 class="m-0 font-weight-bold ">Ajouter une Ressource </h4>
+
+    <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 ">
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+    {{ include('ressource/_form.html.twig') }}
+
+    <a href="{{ path('app_ressource_index') }}" class="btn btn-success rounded-pill m-2"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+Retour</a>
+    </div>
+    </div>
+    </div>
+{% endblock %}

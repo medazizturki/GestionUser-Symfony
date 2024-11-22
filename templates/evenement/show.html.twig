@@ -1,0 +1,55 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Evenement{% endblock %}
+
+{% block body %}
+
+    <a href="{{ path('app_evenement_index') }}" class="btn btn-info rounded-pill m-2" ><i class="fa fa-arrow-left" ></i></a>
+    <h1>Evenement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ evenement.id }}</td>
+            </tr>
+            <tr>
+                <th>ImageEvenement</th>
+                <td><img src="{{ asset('uploads/' ~evenement.imageEvenement) }}" style=" width:150px; height:150px; " alt=""/></td>
+            </tr>
+            <tr>
+                <th>TypeEvenement</th>
+                <td>{{ evenement.typeEvenement }}</td>
+            </tr>
+            <tr>
+                <th>NomEvenement</th>
+                <td>{{ evenement.nomEvenement }}</td>
+            </tr>
+            <tr>
+                <th>LieuEvenement</th>
+                <td>{{ evenement.lieuEvenement }}</td>
+            </tr>
+            <tr>
+                <th>nbrparticipants</th>
+                <td>{{ evenement.nbrparticipants }}</td>
+            </tr>
+            <tr>
+                <th>DateDebut</th>
+                <td>{{ evenement.dateDebut ? evenement.dateDebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateFin</th>
+                <td>{{ evenement.dateFin ? evenement.dateFin|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ evenement.Color }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+        <a href="{{ path('app_evenement_edit', {'id': evenement.id}) }}" class="btn btn-info rounded-pill m-2" ><i class="fas fa-edit"></i></a>
+
+    {{ include('evenement/_delete_form.html.twig') }}
+{% endblock %}

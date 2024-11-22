@@ -1,0 +1,16 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% extends 'back.html.twig' %}
+
+{% block title %}Edit Demande{% endblock %}
+
+{% block body %}
+    <h1>Edit Demande</h1>
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+    {{ include('demande/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_demande_index') }}">back to list</a>
+
+    {{ include('demande/_delete_form.html.twig') }}
+{% endblock %}

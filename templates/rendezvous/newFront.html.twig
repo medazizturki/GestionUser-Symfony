@@ -1,0 +1,16 @@
+{% extends 'front.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}New Rendezvous{% endblock %}
+
+{% block body %}
+ {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+    <h1>Prendre Rendezvous</h1>
+
+
+    {{ include('rendezvous/_form.html.twig') }}
+
+    <a href="{{ path('app_rendezvous_front') }}"class="btn btn-primary">back to list</a>
+    </div>
+{% endblock %}

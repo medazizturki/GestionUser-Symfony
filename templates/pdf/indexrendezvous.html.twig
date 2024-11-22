@@ -1,0 +1,35 @@
+<img src="{{ asset('uploads/logo.jpg') }}"  style=" width:100px; height:100px;"alt="Description de votre image">
+{% block title %} <style=" width:10px; height:100px;"><h1>LA LISTE DES RENDEZ-VOUS</h1>{% endblock %}
+
+{% block body %}
+<div>
+<table  border="1">
+        <thead >
+            <tr>
+            
+            
+                <th style="text-color: #FFFFFF;">Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Lieu</th>
+                <th>Email</th>
+                <th>Date</th>
+                
+                          
+            </tr>  
+        </thead>
+            <tbody>
+                        {% for rendezvou in rendezvous %}
+            <tr>
+                <td>{{ rendezvou.id }}</td>
+                <td>{{ rendezvou.nomRendezvous }}</td>
+                <td>{{ rendezvou.prenomRendezvous }}</td>
+                <td>{{ rendezvou.lieuRendezvous }}</td>
+                <td>{{ rendezvou.emailRendezvous }}</td>
+                <td>{{ rendezvou.dateRendezvous ? rendezvou.dateRendezvous|date('Y-m-d') : '' }}</td>
+             </tr>
+                        {% endfor %}
+             </tbody>
+</table>
+</div>
+{% endblock %}

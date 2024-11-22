@@ -1,0 +1,11 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}New Reponse{% endblock %}
+
+{% block body %}
+    <h4>Ajouter Reponse</h4>
+
+    {{ include('reponse/_form.html.twig') }}
+
+    <a href="{{ path('app_reponse_index') }}"><button type="button" class="btn btn-primary btn-sm" style="margin-left:100px; margin-top:-52px;">Retour</button></a>
+{% endblock %}

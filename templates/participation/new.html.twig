@@ -1,0 +1,13 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}New Participation{% endblock %}
+
+{% block body %}
+
+    <h2>Veuillez remplir les champs pour participer</h2>
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+
+    {{ include('participation/_form.html.twig') }}
+
+    <a href="{{ path('app_evenement_indexFront') }}">back to list</a>
+{% endblock %}
